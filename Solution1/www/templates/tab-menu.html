@@ -1,0 +1,29 @@
+﻿<ion-view view-title="Sikisushi Menu">
+    <ion-content>
+        <div class="row">
+            <div class="col">
+                <div class="list card" ng-repeat="item in columna1">
+                    <div class="item item-image">
+                        <img ng-src="{{item.imagen}}">
+                    </div>
+                    <a class="item assertive" href="#">
+                        <p>{{item.titulo}}</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="list card" ng-repeat="item in columna2">
+                    <div class="item item-image">
+                        <img ng-src="{{item.imagen}}">
+                    </div>
+                    <a class="item assertive" href="#">
+                        <p>{{item.titulo}}</p>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+       
+    </ion-content>
+</ion-view>
