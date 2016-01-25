@@ -14,33 +14,48 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('MenuCtrl', function($scope)
+.controller('MenuCtrl', function($scope, $window, $log)
 {
+    $scope.cols = [0, 1, 2];
+    if ($window.screen.width < 480) {
+        $scope.cols = [0, 1];
+    }
     $scope.columna1 = [{
         imagen: 'img/takeshi.jpg',
         titulo: 'Takeshi',
         descripcion: 'takeshidesc',
+        precio: 10.50,
+        width:'50%'
     }, {
         imagen: 'img/especial.jpg',
         titulo: 'Especial',
-        descripcion: 'californiadesc'
+        descripcion: 'californiadesc',
+        precio: 11.30,
+        width:'50%'
     }, {
         imagen: 'img/togareshi.jpg',
         titulo: 'Togareshi',
-        descripcion: 'takeshidesc'
-    }];
-    $scope.columna2 = [{
+        descripcion: 'takeshidesc',
+        precio: 10.00,
+        width:'50%'
+    },{
         imagen: 'img/california.jpg',
         titulo: 'California',
-        descripcion: 'takeshidesc'
+        descripcion: 'takeshidesc',
+        precio: 11.34,
+        width:'50%'
     }, {
         imagen: 'img/cordonblue.jpg',
         titulo: 'Cordon Blue',
-        descripcion: 'takeshidesc'
+        descripcion: 'takeshidesc',
+        precio:10.30,
+        width:'50%'
     }, {
         imagen: 'img/Charolas.jpg',
         titulo: 'Charolas',
-        descripcion: 'takeshidesc'
+        descripcion: 'takeshidesc',
+        precio: 11.23,
+        width:'50%'
     }];
 
 
