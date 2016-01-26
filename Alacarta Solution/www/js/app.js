@@ -27,64 +27,74 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
-  $stateProvider
+    $stateProvider
 
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: "/tab",
-    abstract: true,
-    templateUrl: "templates/tabs.html"
-  })
+    // setup an abstract state for the tabs directive
+      .state('tab', {
+          url: "/tab",
+          abstract: true,
+          templateUrl: "templates/tabs.html"
+      })
 
-  // Each tab has its own nav history stack:
+    // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-  .state('tab.menu', {
-      url: '/menu',
-      views: {
-          'tab-menu': {
-              templateUrl: 'templates/tab-menu.html',
-              controller: 'MenuCtrl'
+    .state('tab.dash', {
+        url: '/dash',
+        views: {
+            'tab-dash': {
+                templateUrl: 'templates/tab-dash.html',
+                controller: 'DashCtrl'
+            }
+        }
+    })
+    .state('tab.menu', {
+        url: '/menu',
+        views: {
+            'tab-menu': {
+                templateUrl: 'templates/tab-menu.html',
+                controller: 'MenuCtrl'
+            }
+        }
+    })
+        .state('tab.menu-view', {
+            url:'/menu/:platilloId',
+            views:{
+                'tab-menu':{
+                    templateUrl:'templates/tab-menu.html',
+                    controller: 'MenuCtrl'
+                }
+            }
+        }
+    )
+
+    .state('tab.chats', {
+        url: '/chats',
+        views: {
+            'tab-chats': {
+                templateUrl: 'templates/tab-chats.html',
+                controller: 'ChatsCtrl'
+            }
+        }
+    })
+      .state('tab.chat-detail', {
+          url: '/chats/:chatId',
+          views: {
+              'tab-chats': {
+                  templateUrl: 'templates/chat-detail.html',
+                  controller: 'ChatDetailCtrl'
+              }
           }
-      }
-  })
+      })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+    .state('tab.map', {
+        url: '/map',
+        views: {
+            'tab-map': {
+                templateUrl: 'templates/tab-map.html',
+                controller: 'MapCtrl'
+            }
         }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.map', {
-    url: '/map',
-    views: {
-      'tab-map': {
-        templateUrl: 'templates/tab-map.html',
-        controller: 'MapCtrl'
-      }
-    }
-  });
+    });
 
 
 
