@@ -18,52 +18,34 @@
 */
 package org.apache.cordova;
 
+import android.webkit.HttpAuthHandler;
+
 /**
- * The Class AuthenticationToken defines the userName and password to be used for authenticating a web resource
+ * Specifies interface for HTTP auth handler object which is used to handle auth requests and
+ * specifying user credentials.
  */
-public class AuthenticationToken {
-    private String userName;
-    private String password;
+public class CordovaHttpAuthHandler implements ICordovaHttpAuthHandler {
 
-    /**
-     * Gets the user name.
-     *
-     * @return the user name
-     */
-    public String getUserName() {
-        return userName;
+    private final HttpAuthHandler handler;
+
+    public CordovaHttpAuthHandler(HttpAuthHandler handler) {
+        this.handler = handler;
     }
-
+    
     /**
-     * Sets the user name.
-     *
-     * @param userName
-     *            the new user name
+     * Instructs the WebView to cancel the authentication request.
      */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void cancel () {
+        this.handler.cancel();
     }
-
+    
     /**
-     * Gets the password.
-     *
-     * @return the password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * Sets the password.
-     *
+     * Instructs the WebView to proceed with the authentication with the given credentials.
+     * 
+     * @param username
      * @param password
-     *            the new password
      */
-    public void setPassword(String password) {
-        this.password = password;
+    public void proceed (String username, String password) {
+        this.handler.proceed(username, password);
     }
-
-
-
-
 }
