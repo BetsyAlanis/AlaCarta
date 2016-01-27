@@ -14,8 +14,10 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('MenuCtrl', function($scope, $window, $log)
+.controller('MenuCtrl', function($scope, $window, $log, $stateParams)
 {
+    $scope.platilloId = $stateParams.platilloId;
+    $scope.currentImagenObjeto = {};
     $scope.cols = [0, 1, 2];
     if ($window.screen.width < 480) {
         $scope.cols = [0, 1];
@@ -23,41 +25,50 @@ angular.module('starter.controllers', [])
     $scope.columna1 = [{
         imagen: 'img/takeshi.jpg',
         titulo: 'Takeshi',
-        descripcion: 'takeshidesc',
+        descripcion: 'Alga por dentro, salmon en salsa de no estoy segura que, aguacate y filadelfia',
         precio: 10.50,
-        width:'50%'
+        platilloId:1
     }, {
         imagen: 'img/especial.jpg',
         titulo: 'Especial',
         descripcion: 'californiadesc',
         precio: 11.30,
-        width:'50%'
+        platilloId:2
     }, {
         imagen: 'img/togareshi.jpg',
         titulo: 'Togareshi',
         descripcion: 'takeshidesc',
         precio: 10.00,
-        width:'50%'
+        platilloId: 3
     },{
         imagen: 'img/california.jpg',
         titulo: 'California',
         descripcion: 'takeshidesc',
         precio: 11.34,
-        width:'50%'
+        platilloId: 4
     }, {
         imagen: 'img/cordonblue.jpg',
         titulo: 'Cordon Blue',
         descripcion: 'takeshidesc',
         precio:10.30,
-        width:'50%'
+        width: '50%',
+        platilloId: 5
     }, {
         imagen: 'img/Charolas.jpg',
         titulo: 'Charolas',
         descripcion: 'takeshidesc',
         precio: 11.23,
-        width:'50%'
+        width: '50%',
+        platilloId: 6
     }];
 
+    angular.forEach($scope.columna1, function (current) {
+        if(current.platilloId == $scope.platilloId)
+        {
+            $scope.currentImagenObjeto = current;
+        }
+
+    })
 
 })
 
