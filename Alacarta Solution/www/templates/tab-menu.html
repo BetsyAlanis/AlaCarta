@@ -2,8 +2,9 @@
     <ion-content>
         <div ng-show="{{platilloId}}">
             <div class="item item-avatar">
-                <img src="img/icono-rojo-sinletras.png">
-                <h2>{{currentImagenObjeto.titulo}} {{currentImagenObjeto.precio|currency}}</h2>
+                <img src="img\icono-rojo-sinletras.png">
+                <h2>{{currentImagenObjeto.titulo}}</h2>
+            <p>{{currentImagenObjeto.precio|currency}}</p>
             </div>
             <div class="item item-body">
                 <img class="full-image" src="{{currentImagenObjeto.imagen}}">

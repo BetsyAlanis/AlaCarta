@@ -25,41 +25,50 @@ angular.module('starter.controllers', [])
     $scope.columna1 = [{
         imagen: 'img/takeshi.jpg',
         titulo: 'Takeshi',
-        descripcion: 'Alga por dentro, salmon en salsa de no estoy segura que, aguacate y filadelfia',
-        precio: 10.50,
+        descripcion: 'Por dentro pepino, aguacate, camarón y philadelphia, encima spicy.  <br/>Otras variaciones:  <br/>Camaron - $95.00  <br/>Pulpo - $80.00\nSurimi - $75.00 \nSalmon - $85.00\nAtun - $85.00',
+        precio: 85.00,
         platilloId:1
     }, {
         imagen: 'img/especial.jpg',
-        titulo: 'Especial',
-        descripcion: 'californiadesc',
-        precio: 11.30,
+        titulo: 'Especial Roll',
+        descripcion: 'Por dentro camarón, salmón, philadelphia.'+
+            'Encima ensalada especial y rebanadas de aguacate.',
+        precio: 80.00,
         platilloId:2
     }, {
         imagen: 'img/togareshi.jpg',
         titulo: 'Togareshi',
-        descripcion: 'takeshidesc',
-        precio: 10.00,
+        descripcion: '(Rollo natural) Por dentro salmón, pepino y aguacate, forado en togareshi.',
+        precio: 65.00,
         platilloId: 3
     },{
         imagen: 'img/california.jpg',
-        titulo: 'California',
-        descripcion: 'takeshidesc',
-        precio: 11.34,
+        titulo: 'California Roll',
+        descripcion: 'Surimi, philadelphia y aguacate por dentro.',
+        precio: 55.00,
         platilloId: 4
     }, {
         imagen: 'img/cordonblue.jpg',
         titulo: 'Cordon Blue',
-        descripcion: 'takeshidesc',
-        precio:10.30,
-        width: '50%',
+        descripcion: 'Por dentro pechuga de pollo, tocino y philadelphia. Por fuera queso gratinado.',
+        precio:65.00,
         platilloId: 5
     }, {
-        imagen: 'img/Charolas.jpg',
-        titulo: 'Charolas',
-        descripcion: 'takeshidesc',
-        precio: 11.23,
-        width: '50%',
+        imagen: 'img/manchis.jpg',
+        titulo: 'Mancis Roll',
+        descripcion: 'Por dentro res, tocino, camarón, surimi, pollo, '+
+            'aguacate y queso philadelphia. Por fuera queso' +
+            'manchego y americano gratinado.',
+        precio: 90.00,
         platilloId: 6
+    },
+    {
+        imagen: 'img/kiyoshi-roll.jpg',
+        titulo: 'Kiyoshi Roll',
+        descripcion: '(Rollo sin arroz) Por dentro tampico, camarón,'+
+        'aguacate y philadelphia, alga por fuera y empanizado.',
+        precio: 55.00,
+        platilloId:7
     }];
 
     angular.forEach($scope.columna1, function (current) {
