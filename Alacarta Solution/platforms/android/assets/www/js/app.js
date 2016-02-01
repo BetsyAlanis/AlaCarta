@@ -59,33 +59,33 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         .state('tab.menu-view', {
             url:'/menu/:platilloId',
             views:{
-                'tab-menu':{
+                'tab-categorias-menu': {
                     templateUrl:'templates/tab-menu.html',
                     controller: 'MenuCtrl'
                 }
             }
         }
     )
-
-    .state('tab.chats', {
-        url: '/chats',
+            .state('tab.menu-cat', {
+                url: '/menu/:platilloId/:categoriaId',
+                views: {
+                    'tab-categorias-menu': {
+                        templateUrl: 'templates/tab-menu.html',
+                        controller: 'MenuCtrl'
+                    }
+                }
+            }
+    )
+    .state('tab.categorias',
+    {
+        url: '/categorias',
         views: {
-            'tab-chats': {
-                templateUrl: 'templates/tab-chats.html',
-                controller: 'ChatsCtrl'
+            'tab-categorias-menu': {
+                templateUrl: 'templates/tab-categorias.html',
+                controller: 'CategoriasCtrl'
             }
         }
     })
-      .state('tab.chat-detail', {
-          url: '/chats/:chatId',
-          views: {
-              'tab-chats': {
-                  templateUrl: 'templates/chat-detail.html',
-                  controller: 'ChatDetailCtrl'
-              }
-          }
-      })
-
     .state('tab.map', {
         url: '/map',
         views: {
