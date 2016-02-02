@@ -38,13 +38,25 @@ angular.module('starter.controllers', [])
 .controller('MenuCtrl', function($scope, $window, $log, $stateParams)
 {
     $scope.platilloId = $stateParams.platilloId;
+    $scope.categoriaId = $stateParams.categoriaId;
     $scope.currentImagenObjeto = {};
     $scope.cols = [0, 1, 2];
     if ($window.screen.width < 480) {
         $scope.cols = [0, 1];
     }
     $scope.columna1 = window.menu;
-
+    $scope.GetMenu = function(categoriaId)
+    {
+        var arreglo = []
+        angular.forEach($scope.columna1, function (x)
+        {
+            if(categoriaId == x.categoriaId)
+            {
+                arreglo.push(x);
+            }
+        })
+        return arreglo;
+    }
     angular.forEach($scope.columna1, function (current) {
         if(current.platilloId == $scope.platilloId)
         {

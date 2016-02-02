@@ -69,7 +69,7 @@ window.categorias =
       {
           titulo: 'Bombas',
           categoriaId: 3,
-          imagen:''
+          imagen:'img/card-bombas.jpg'
       },
       {
           titulo: 'Yakimeshi',

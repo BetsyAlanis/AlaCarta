@@ -15,7 +15,7 @@
         </div>
         <div class="row">
             <div class="col" ng-repeat="coln in cols">
-                <div class="list card" ng-repeat="item in $parent.columna1" ng-show=" ($index % $parent.cols.length)==$parent.coln ">
+                <div class="list card" ng-repeat="item in GetMenu(categoriaId)" ng-show=" ($index % $parent.cols.length)==$parent.coln ">
                     <div class="item item-image">
                         <img ng-src="{{item.imagen}}" >
                     </div>
