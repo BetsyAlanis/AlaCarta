@@ -7,7 +7,7 @@
             <p>{{currentImagenObjeto.precio|currency}}</p>
             </div>
             <div class="item item-body">
-                <img class="full-image" src="{{currentImagenObjeto.imagen}}">
+                <img class="full-image" src="{{currentImagenObjeto.imagen||'img/imagen-incognito.jpg'}}">
                 <p>
                     {{currentImagenObjeto.descripcion}}
                 </p>
@@ -15,9 +15,10 @@
         </div>
         <div class="row">
             <div class="col" ng-repeat="coln in cols">
+              
                 <div class="list card" ng-repeat="item in GetMenu(categoriaId)" ng-show=" ($index % $parent.cols.length)==$parent.coln ">
                     <div class="item item-image">
-                        <img ng-src="{{item.imagen}}" >
+                        <img ng-src="{{item.imagen||'img/imagen-incognito.jpg'}}" >
                     </div>
                     <a class="item assertive" href="#/tab/menu/{{item.platilloId}}">
                         <p>{{item.titulo}} {{item.precio|currency}}</p>
